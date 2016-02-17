@@ -37,9 +37,9 @@ class Orders extends MY_Model {
         $items = $CI->orderitems->group($num);
         $result =0;
         if (count($items) > 0)
-            foreach ($item as $items)
+            foreach ($items as $item)
             {
-                $menu = $CU->menu-> get($item->item);
+                $menu = $CI->menu->get($item->item);
                 $result += $item->quantity * $menu->price;
             }
         return $result;
